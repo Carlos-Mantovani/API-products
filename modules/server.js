@@ -11,8 +11,8 @@ app.use(express.json());
 
 app.get('/products', async (req, res) => {
     try {
-        const users = await ProductModel.find({});
-        res.status(200).json(users);
+        const products = await ProductModel.find({});
+        res.status(200).json(products);
     } catch (error) {
         res.status(500).send('Não foi possível listar os produtos!');
     }
