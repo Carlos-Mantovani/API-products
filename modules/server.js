@@ -9,6 +9,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get('/', async (req, res) => {
+    res.status(200).send('API dos produtos!');
+})
+
 app.get('/products', async (req, res) => {
     try {
         const products = await ProductModel.find({});
